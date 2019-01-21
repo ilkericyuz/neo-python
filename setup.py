@@ -20,6 +20,7 @@ reqs = [str(ir.req) for ir in install_reqs]
 setup(
     name='neo-python',
     python_requires='>=3.6',
+    # version='0.8.3',
     description="Python Node and SDK for the NEO blockchain",
     long_description=readme,
     author="Thomas Saunders",
@@ -27,6 +28,19 @@ setup(
     maintainer="Erik van den Brink",
     maintainer_email='erik@cityofzion.io',
     url='https://github.com/CityOfZion/neo-python',
+    packages=find_packages(include=['neo']),
+    entry_points = {
+        'console_scripts': [
+            'np-prompt=neo.bin.prompt:main',
+            'np-api-server=neo.bin.api_server:main',
+            'np-bootstrap=neo.bin.bootstrap:main',
+            'np-reencrypt-wallet=neo.bin.reencrypt_wallet:main',
+            'np-sign=neo.bin.sign_message:main',
+            'np-export=neo.bin.export_blocks:main',
+            'np-import=neo.bin.import_blocks:main',
+        ],
+    },
+    include_package_data=True,
     install_requires=reqs,
     license="MIT license",
     zip_safe=False,
