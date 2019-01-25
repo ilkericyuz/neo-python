@@ -378,10 +378,10 @@ settings = SettingsHolder()
 
 # Load testnet settings as default. This is useful to provide default data/db directories
 # to any code using "from neo.Settings import settings"
-settings.setup_testnet()
+# settings.setup_testnet()
 
 # By default, set loglevel to INFO. DEBUG just print a lot of internal debug statements
-settings.set_loglevel(logging.INFO)
+# settings.set_loglevel(logging.INFO)
 
 # System check: Are dependencies must be installed in the correct version
 # Can be bypassed with `SKIP_DEPS_CHECK=1 python prompt.py`
